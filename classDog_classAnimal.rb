@@ -211,7 +211,7 @@ class TestPets < Test::Unit::TestCase
   end
   
   def test_05
-    description = "Exercise #{pet} errors"
+    description = "Exercise error handling"
     color = ['black', 'brown', 'white', 'rainbow', 'red', 'blue', 'solid black', 'orange stripe', 'patches', 'tan', 'marble', 'other'].to_a
       begin
         fishy = Fish.new
