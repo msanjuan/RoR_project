@@ -1,0 +1,7 @@
+Script started on Fri Oct 30 15:02:01 2009
+bash-3.2$ Products.fine(:all)
+bash: syntax error near unexpected token `:all'
+bash-3.2$ exit
+exit
+
+Script done on Fri Oct 30 15:02:19 2009
