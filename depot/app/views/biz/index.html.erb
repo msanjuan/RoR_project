@@ -8,33 +8,44 @@ body {
 }
 </style>
 </head>
-<h3 style="font-family:Arial Black">Welcome to my rinky-dink RoR biz search demo!</h3>
+<h1 style="font-family:Arial Black">Welcome to my rinky-dink RoR biz search demo!</h1>
 Try to ignore how ugly this page is...
-<h1 style="font-family:Arial Black">Instead, look at the cutest puppy-muffin ever!</h1>
-Aww...
-<br>
-<img src="/images/dirtydog.jpg">
 <h3 style="font-family:Arial Black">Enter your biz search below!</h3>
-<table style="border:0; text-align:right; margin-left:auto; margin-right:auto">
-<form method="get">
+<p>
+<table style="border:0; margin-left:auto; margin-right:auto">
+  <form action="/biz" method="post">
   <tr>
-    <td><label for="city">City:</label></td>
-    <td><input type="text" name="city" /></td>
+    <td><%= label_tag 'city' %>
+    </td>
+    <td><%= text_field_tag 'city' %>
+    </td>
+  </tr>
+  <tr>    
+    <td><%= label_tag 'state' %>
+    </td>
+    <td><%= text_field_tag 'state' %> 
+    </td>
   </tr>
   <tr>
-    <td><label for="state">State:</label></td>
-    <td><input type="text" name="state" /></td>
-  </tr>
-  <tr>
-    <td><label for="biz">Business:</label></td>
-    <td><input type="text" name="biz" /></td>
+    <td><%= label_tag 'business' %>
+    </td>
+    <td><%= text_field_tag 'business' %>
+    </td>
   </tr>
 </table>
-<br>
-    <input type="submit" />
-</form>
-<br>
-<br>
-Debug: <%= params.inspect %>
+    <%= submit_tag 'Search' %>
+  </form>
+<p>
+<% if @result != nil %>
+<p><%= @result[:name] %>
+<p><%= @result[:location] %>
+<p><%= @result[:phone] %>
+<% end %>
+<p>
+Debug:
+<p>
+form submitted: <%= params[:commit] != nil %>
+<p>
+<%= params.inspect %>
 </body>
 </html>
