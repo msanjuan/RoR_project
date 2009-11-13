@@ -15,7 +15,13 @@ Try to ignore how ugly this page is...
 <table style="border:0; margin-left:auto; margin-right:auto">
   <form action="/biz" method="post">
   <tr>
-    <td><%= label_tag 'city' %>
+    <tr>
+    <td><%= label_tag 'business' %>
+    </td>
+    <td><%= text_field_tag 'business' %>
+    </td>
+  </tr>
+   <td><%= label_tag 'city' %>
     </td>
     <td><%= text_field_tag 'city' %>
     </td>
@@ -24,12 +30,6 @@ Try to ignore how ugly this page is...
     <td><%= label_tag 'state' %>
     </td>
     <td><%= text_field_tag 'state' %> 
-    </td>
-  </tr>
-  <tr>
-    <td><%= label_tag 'business' %>
-    </td>
-    <td><%= text_field_tag 'business' %>
     </td>
   </tr>
 </table>
@@ -42,7 +42,7 @@ Try to ignore how ugly this page is...
 <p><%= @result[:phone] %>
 <% end %>
 <p>
-Debug:
+<h3 style="font-family:Arial Black">Debug:</h3>
 <p>
 form submitted: <%= params[:commit] != nil %>
 <p>

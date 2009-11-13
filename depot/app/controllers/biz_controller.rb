@@ -29,6 +29,14 @@ class BizController < ApplicationController
     end
   end  
 
+  def error_missing_input
+    render :action => 'error_missing_input'
+  end
+
+  def error_no_results
+    render :action => 'error_no_results'
+  end
+
 ### wp api stuff
 
   def biz_search
@@ -36,11 +44,11 @@ class BizController < ApplicationController
   end
 
   def userCity
-    @biz_search[:city]
+    @biz_search[:city].downcase.gsub(' ', '+')
   end
 
   def userState
-    @biz_search[:state]
+    @biz_search[:state].downcase.gsub(' ','+')
   end
 
   def userBiz
