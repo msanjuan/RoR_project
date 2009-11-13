@@ -29,6 +29,14 @@ class BizController < ApplicationController
     end
   end  
 
+  def error_missing_input
+    render :action => 'error_missing_input'
+  end
+
+  def error_no_results
+    render :action => 'error_no_results'
+  end
+
 ### wp api stuff
 
   def biz_search
